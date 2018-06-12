@@ -1,0 +1,19 @@
+{
+  "name": "sky-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sky web-app internal",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.16.2",
+    "http-server": "^0.11.1",
+    "mongoose": "^5.0.10",
+    "concurrently": "^3.5.0"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "client": "http-server -a localhost -p 8080 -c-1 ./app -s -o",
+    "server": "node Server/server"
+  }
+}
